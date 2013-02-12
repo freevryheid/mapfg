@@ -35,7 +35,11 @@ def info():
     lat = get('get position/latitude-deg\r\n')[0]
     lon = get('get position/longitude-deg\r\n')[0]
     head = get('get orientation/heading-deg\r\n')[0]
-    return(lat + ',' + lon + ',' + head)
+    alt = get('get position/altitude-ft\r\n')[0]
+    nm = get('get instrumentation/gps/odometer\r\n')[0]
+    fuel = get('get consumables/fuel/total-fuel-gals\r\n')[0]
+    spd = get('get velocities/airspeed-kt\r\n')[0]
+    return(lat + ',' + lon + ',' + head + ',' + alt + ',' + nm + ',' + fuel + ',' + spd)
 
 bottle.run(host='localhost', port=8080, reloader=True, debug=True)
 #bottle.run(host='localhost', port=8080)

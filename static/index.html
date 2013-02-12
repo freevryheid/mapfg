@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>myfg</title>
+    <title>mapfg</title>
     <link rel="stylesheet" href="app/css/app.css">
     <script>
       dojoConfig= {
@@ -19,6 +19,25 @@
   </head>
   <body class="claro">
     <div id="overlay"></div>
-    <div id="map" style="background-color: #b5d0d0; width: 100%; height: 100%;"></div>
+    <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:true, liveSplitters:true" id="borderContainer">
+      <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter:true, region:'top'" style="height: 60%;">
+        <div id="map" style="background-color: #b5d0d0; width: 100%; height: 100%;"></div>
+      </div>
+      <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter:true, region:'center'" style="width: 100%; height: 40%;">
+        <table>
+          <tr>
+            <td>
+              <div id="altGauge"></div>
+            </td>
+            <td>
+              <div id="spdGauge"></div>
+            </td>
+            <td>
+              <div id="ecoGauge"></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </body>
 </html>

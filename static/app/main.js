@@ -3,15 +3,23 @@ define(["require"], function (require) {
   require([
     "dojo/ready",
     "app/map",
-    "app/base"
+    "app/base",
+    "app/gauge",
+    "dijit/layout/ContentPane",
+    "dijit/layout/BorderContainer"
   ], function (
     ready,
     Map,
-    Base
+    Base,
+    Gauge
   ) {
     ready(function () {
+      Number.prototype.mod = function(n) {
+        return ((this%n)+n)%n;
+      };
       Map.init(app);
       Base.init(app);
+      Gauge.init(app);
     });
   });
 });
